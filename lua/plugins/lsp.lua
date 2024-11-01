@@ -16,7 +16,7 @@ return {
 
         -- Install the C language server and linter
         mason_lspconfig.setup({
-          ensure_installed = { "clangd", "clang-format" },
+          ensure_installed = { "clangd", "cmake" },
         })
 
         -- Configure the C language server and linter
