@@ -1,41 +1,30 @@
 return {
   {
     "williamboman/mason.nvim",
-    config = true,
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+
     -- ...
     -- Add the C language server and linter
-    {
-      "neovim/nvim-lspconfig",
-      dependencies = {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-      },
-      config = function()
-        local lspconfig = require("lspconfig")
-        local mason_lspconfig = require("mason-lspconfig")
-
-        -- Install the C language server and linter
-        mason_lspconfig.setup({
-          ensure_installed = { "clangd", "cmake" },
-        })
-
-        -- Configure the C language server and linter
-        mason_lspconfig.setup_handlers({
-          function(server_name)
-            lspconfig[server_name].setup({})
-          end,
-        })
-      end,
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
     },
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      -- ...
-      -- Enable C language support
-      languages = {
-        c = true,
-      },
-    },
+    config = function()
+      local lspconfig = require("lspconfig")
+      local mason_lspconfig = require("mason-lspconfig")
+
+      -- Install the C language server and linter
+      mason_lspconfig.setup({
+        ensure_installed = { "neocmake", "clangd", "cmake", "pylsp", "ast-grep" },
+      })
+
+      -- Configure the C language server and linter
+      mason_lspconfig.setup_handlers({
+        function(server_name)
+          lspconfig[server_name].setup()
+        end,
+      })
+    end,
   },
 }
