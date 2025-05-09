@@ -7,4 +7,4 @@ require("config.options")
 
 -- vim.cmd("colorscheme kanagawa")
 -- require("kanagawa").load("dragon")
-vim.cmd("colorscheme kanagawa-dragon")
+-- vim.cmd("colorscheme kanagawa-dragon")

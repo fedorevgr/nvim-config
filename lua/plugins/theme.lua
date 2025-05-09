@@ -1,12 +1,21 @@
 return {
-	-- add gruvbox
 	{ "rebelot/kanagawa.nvim" },
+	{
+		"cdmill/neomodern.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("neomodern").setup({
+				-- optional configuration here
+			})
+			require("neomodern").load()
+		end,
+	},
 
-	-- Configure LazyVim to load gruvbox
 	{
 		"LazyVim/LazyVim",
 		opts = {
 			"dragon",
 		},
-	},
+	}, -- Using lazy.nvim
 }
