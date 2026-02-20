@@ -1,3 +1,3 @@
 return {
-  "ycm-core/YouCompleteMe",
+	"ycm-core/YouCompleteMe",
 }

@@ -101,6 +101,7 @@ require("neomodern").setup({
 	-- Override highlight groups
 	highlights = {},
 })
+
 -- Convenience function that simply calls `:colorscheme <theme>` with the theme
 -- specified in your config.
 -- require("kanagawa").load()
