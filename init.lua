@@ -2,7 +2,7 @@
 require("config.lazy")
 require("lspconfig")
 require("cmake-tools")
-require("mason")
+require("mason").setup({})
 require("config.options")
 
 vim.schedule(function()
